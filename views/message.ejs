@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message # <%= message.id %></title>
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+        <main class="message-details">
+            <h2 class="user"><%= message.user %></h2>
+            <p class="text"><%= message.text %></p>
+            <p class="date"><%= message.added %></p>
+            <a class="back-link" href="/">Back</a>
+        </main>
+</body>
+</html>

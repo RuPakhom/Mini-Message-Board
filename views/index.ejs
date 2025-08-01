@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <a href="/new" class="add-message link">Add new Message</a>
+    <main class="container">
+    <%for(let message of messages){ %>
+        <div class="message">
+            <h2 class="user"><%= message.user %></h2>
+            <p class="text"><%= message.text %></p>
+            <p class="date"><%= message.added %></p>
+            <a class="details" href="/message/<%= message.id %>">Details</a>
+        </div>
+    <% } %>
+    </main>
+
+</body>
+</html>
