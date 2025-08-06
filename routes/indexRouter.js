@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const indexRouter = Router()
-const messages = require('../messages')
+const controller = require('../controllers/indexController')
 
 function handlePost(req, res) {
     const user = req.body.name
@@ -16,10 +16,7 @@ function handlePost(req, res) {
     res.redirect("/")
 }
 
-indexRouter.get("/", (req, res) => res.render("index", {
-    title: "Mini Messageboard",
-    messages: messages
-}))
+indexRouter.get("/", controller.getMessages)
 indexRouter.get("/new", (req, res) => res.render("form"))
 indexRouter.post("/new", handlePost)
 

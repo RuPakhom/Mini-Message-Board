@@ -1,4 +1,5 @@
 const express = require("express")
+require("dotenv").config()
 const indexRouter = require("./routes/indexRouter")
 const messageRouter = require("./routes/messageRouter")
 
