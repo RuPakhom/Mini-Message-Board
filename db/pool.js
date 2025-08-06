@@ -8,5 +8,12 @@ const pool = new Pool({
     database: process.env.PGDB
 })
 
+// const pool = new Pool({
+//     connectionString: process.env.PGPUBLIC,
+//     ssl: {
+//         rejectUnauthorized: false
+//     }
+// })
+
 
 module.exports = pool

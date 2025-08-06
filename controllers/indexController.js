@@ -8,8 +8,22 @@ async function getMessages(req, res) {
 })
 }
 
+function renderForm(req, res) {
+    res.render("form")
+}
+
+async function handlePost(req, res) {
+    const user = req.body.name
+    const text = req.body.message;
+
+    await db.addMessageToDB(text, user)
+    res.redirect("/")
+}
+
 
 
 module.exports = {
-    getMessages
+    getMessages,
+    renderForm,
+    handlePost
 }
